@@ -7,12 +7,7 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out code from GitHub...'
-                git url: 'https://github.com/meikenofdarth/Calculator'
-            }
-        }
+        // The Checkout stage has been removed.
         stage('Run Unit Tests') {
             steps {
                 echo 'Running unit tests...'
