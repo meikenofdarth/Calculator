@@ -7,8 +7,11 @@ pipeline {
     }
 
     stages {
-        // The Checkout stage has been removed.
         stage('Run Unit Tests') {
+            agent {
+                // Run this stage inside a temporary Docker container
+                docker { image 'python:3.9-slim' }
+            }
             steps {
                 echo 'Running unit tests...'
                 sh 'python -m unittest discover'
