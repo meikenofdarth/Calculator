@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    // ADD THIS TOOLS BLOCK
+    tools {
+        docker 'docker-tool'
+    }
+
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         DOCKER_IMAGE_NAME = "smoothlake67/scientific-calculator"
@@ -9,7 +14,7 @@ pipeline {
     stages {
         stage('Run Unit Tests') {
             agent {
-                // Run this stage inside a temporary Docker container
+                // This part remains the same
                 docker { image 'python:3.9-slim' }
             }
             steps {
