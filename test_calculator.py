@@ -1,0 +1,20 @@
+# test_calculator.py
+import unittest
+from calculator import square_root, factorial, natural_logarithm, power
+
+class TestCalculator(unittest.TestCase):
+
+    def test_square_root(self):
+        self.assertEqual(square_root(4), 2)
+
+    def test_factorial(self):
+        self.assertEqual(factorial(5), 120)
+
+    def test_natural_logarithm(self):
+        self.assertAlmostEqual(natural_logarithm(1), 0)
+
+    def test_power(self):
+        self.assertEqual(power(2, 3), 8)
+
+if __name__ == '__main__':
+    unittest.main()
