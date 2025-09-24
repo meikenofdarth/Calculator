@@ -3,7 +3,7 @@ pipeline {
 
     // ADD THIS TOOLS BLOCK
     tools {
-        docker 'docker-tool'
+        dockerTool 'docker-tool'
     }
 
     environment {
